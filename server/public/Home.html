@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>欢乐购</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/logo.ico" />
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+  <div class="home">
+    <div id="head"></div>
+    <div class="dh-top" id="sbtn">
+      <div class="main-dh">
+        <div id="main-dh-one">
+          <div class="logo-dh">
+            <div class="logoko-dh">
+              <img src="images/logoko.png" width="50px" height="40px">
+              <b>欢 乐 购</b>
+            </div>
+            <div class="logotxt-dh">
+              <ul>
+                <li>我</li>
+                <li>们</li>
+                <li>的</li>
+                <li>美</li>
+                <li>好</li>
+                <li>世</li>
+                <li>界</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dh-right-dh">
+            <div class="dh-search-dh">
+              <div class="search-dh">
+                <input class="search-input" id="i1" type="text" value="面膜" style="height:30px;">
+                <a href="#" class="search-btn-dh" onclick="kw(this)">
+                  <i class="iconfont-dh"></i>
+                  <i class="lin-dh"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='lb-area' >
+      <div class='wrap'>
+        <ul class='list' id="wrap-list">
+          <li class='active'><img src="images/lb_1.jpg"></li>
+          <li><img src="images/lb_2.jpg"></li>
+          <li><img src="images/lb_3.jpg"></li>
+          <li><img src="images/lb_4.jpg"></li>
+          <li><img src="images/lb_5.jpg"></li>
+          <li><img src="images/lb_6.jpg"></li>
+          <li><img src="images/lb_7.jpg"></li>
+          <li><img src="images/lb_8.jpg"></li>
+          <li><img src="images/lb_9.jpg"></li>
+        </ul>
+        <ul class='Tab' id="wrap-Tab">
+          <li class='active'></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class='pre btn' >&lt;</div>
+        <div class='next btn'>&gt;</div>
+      </div>
+      <div class="m-sellpoint">
+        <ul>
+          <li>乐购自营</li>
+          <li>全球直采</li>
+          <li>假一赔十</li>
+          <li>售后无忧</li>
+        </ul>
+        <div class="sell-point">
+          <img src="images/list_12.png">
+          <a href="#">领乐购1000元新人礼，APP下单更享手机价</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="content-left" id="cl-left">
+        <img src="images/left_1.jpg" alt="">
+        <ul class="cl-main">
+          <li>今日限时购</li>
+          <li>热门品牌</li>
+        </ul>
+        <ul>
+          <li>美妆专区</li>
+          <li>母婴专区</li>
+          <li>营养保健</li>
+          <li>数码家电</li>
+        </ul>
+      </div>
+      <div class="content-al">
+        <div class="content-title">
+          <h2>今日限时购</h2>
+          <span>本场还剩</span>
+          <div class="dat">
+            <div class="dat-di">
+              <div class="dat-di1" id="dat-db"></div>：
+              <div class="dat-di2" id="dat-dg"></div>：
+              <div class="dat-di3" id="dat-de"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-sh">
+          <ul class="sh-left" id="sh_left">
+            
+          </ul>
+          <ul class="sh-right">
+            <li>
+              <img src="images/shop_5.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right" id="cl-right">
+        <ul>
+          <li>签到</li>
+          <li>购物车</li>
+          <li>APP</li>
+          <li>TOP</li>
+        </ul>
+      </div>
+      <div class="content-brand">
+        <div class="cb-title">
+          <h3>热门品牌</h3>
+          <span>全球精选，一网打尽</span>
+        </div>
+        <div class="cb-cont">
+          <ul class="cb-cont-ul">
+            <li class="cb-cont-li">
+              <div id="cont-btnp" class="cl-pre"><</div>
+              <ul id="cont-li-ul">
+                <li class="active">
+                  <img src="images/03.jpg" width="219px" height="219px" alt="">
+                  <div class="cb-cond">
+                    <h3>BÉABA 贝儿宝</h3>
+                    <p>为宝宝提供健康优质的第一餐</p>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/04.jpg" width="219px" height="219px" alt="">
+                  <div class="cb-cond">
+                    <h3>BÉABA 贝儿宝</h3>
+                    <p>gsdg</p>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/03.jpg" width="219px" height="219px" alt="">
+                  <div class="cb-cond">
+                    <h3>BÉABA 贝儿宝</h3>
+                    <p>为宝宝提供健康优质的第一餐</p>
+                  </div>
+                </li>
+              </ul>
+              <ul class="Tab" id="cl-tab">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div id="cont-btn" class="cl-next">></div>
+            </li>
+            <li class="cb-cont-li1">
+              <ul class="cb-li1-ul">
+                <li>
+                  <div class="cb-di">
+                    <img class="cb-img" src="images/ic8p1ibz10.jpg" alt="">
+                  </div>
+                  <div class="cb-d">匠心织造 柔软呵护</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/ic8p1ibz11.jpg" alt="">
+                  </div>
+                  <div class="cb-d">"妈妈之选"大赏得主</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/ic8p1ibz12.jpg" alt="">
+                  </div>
+                  <div class="cb-d">畅销海外的优质品牌</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/ic8p1ibz13.jpg" alt="">
+                  </div>
+                  <div class="cb-d">德国"质"造,值得信赖</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+              </ul>
+              <ul class="cb-li1-ul">
+                <li>
+                  <div class="cb-di">
+                    <img src="images/icc0dxd356.jpg" alt="">
+                  </div>
+                  <div class="cb-d">创建为你 让生活更好</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/id1ud78m44.jpg" alt="">
+                  </div>
+                  <div class="cb-d">美国知名的婴童用品品牌</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/id17u1iu5.jpg" alt="">
+                  </div>
+                  <div class="cb-d">日本口碑厨房小家电</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="cb-di">
+                    <img src="images/ie10423x4.jpg" alt="">
+                  </div>
+                  <div class="cb-d">日本高质量电器品牌</div>
+                  <div class="action">
+                    <a class="a-flow">+关注</a>
+                    <p class="follower">12738920人关注该品牌</p>
+                    <a class="a-enter">进入品牌</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="floor">
+    </footer>
+  </div>
+  <script src="JS/jquery-3.4.1.min.js"></script>
+  <script src="JS/main.js"></script>
+  <script>
+    (function(){
+      /*轮播*/
+      let pre=document.getElementsByClassName('pre')[0],
+      nex=document.getElementsByClassName('next')[0],
+      cl_pre=document.getElementsByClassName('cl-pre')[0],
+      cl_nex=document.getElementsByClassName('cl-next')[0],
+      list=document.querySelectorAll('.list li'),
+      tabLi=document.querySelectorAll('.Tab li'),
+      cl_li=document.querySelectorAll('#cont-li-ul li'),
+      ct_li=document.querySelectorAll('#cl-tab li'),
+      box=document.getElementsByClassName('wrap')[0],
+      box_1=document.getElementsByClassName('cb-cont-li')[0],
+      timeId=0,
+      index=0,
+      inde=0,//记录小轮播的下标
+      ct_len=ct_li.length,
+      len=list.length;
+      // console.log(box_1);
+      const setNex=function(){
+        list[index].className="";
+        tabLi[index].className="";
+        index++;
+        if(index>4){
+          index=0;
+        }
+        list[index].className="active";
+        tabLi[index].className="active";
+      }
+      const setNext=function(){
+        /*热门品牌的小轮播*/
+        cl_li[inde].className="";
+        ct_li[inde].className="";
+        inde++;
+        if(inde>ct_len-1){
+          inde=0;
+        }
+        /*热门品牌的小轮播*/
+        cl_li[inde].className="active";
+        ct_li[inde].className="active";
+      }
+
+      nex.onclick=setNex;
+      cl_nex.onclick=setNext;
+
+      pre.onclick=function(){
+        list[index].className="";
+        tabLi[index].className="";
+        index--;
+        if(index<0){
+          index=4;
+        }
+        list[index].className="active";
+        tabLi[index].className="active";
+      }
+      cl_pre.onclick=function(){
+        /*热门品牌的小轮播*/
+        cl_li[inde].className="";
+        ct_li[inde].className="";
+        inde--;
+        if(inde<0){
+          inde=ct_len-1;
+        }
+        /*热门品牌的小轮播*/
+        cl_li[inde].className="active";
+        ct_li[inde].className="active";
+      }
+      /*循环下方按钮移入事件*/
+      for(let i=0;i<len;i++){
+        tabLi[i].onmouseenter=function(){
+          list[index].className="";
+          tabLi[index].className="";
+          index=i;
+          list[index].className="active";
+          tabLi[index].className="active";
+        }
+      }
+      /*小轮播鼠标移入事件*/
+      for(let i=0;i<ct_len;i++){
+        ct_li[i].onmouseenter=function(){
+          cl_li[inde].className="";
+          ct_li[inde].className="";
+          inde=i;
+          cl_li[inde].className="active";
+          ct_li[inde].className="active";
+        }
+      }
+      //自动轮播
+      timeId=setInterval(setNex,3000);
+      let timer=setInterval(setNext,3000);
+
+      box.onmouseenter=() =>{
+        clearInterval(timeId);
+      }
+      box.onmouseleave=() =>{
+        timeId=setInterval(setNex,3000);
+      }
+      /*小轮播*/
+      box_1.onmouseenter=() =>{
+        clearInterval(timer);
+      }
+      box_1.onmouseleave=() =>{
+        timer=setInterval(setNext,3000);
+      }
+      /*轮播结束*/
+    })();
+    /*活动剩余时间倒计时*/
+    function show(){
+      var time=Number(new Date(2019,5,10,12,34,30));
+      // var time=new Date(myyear,mymonth,myday,myhour,myminute,mysecond).getTime();
+      //获取当前时间
+      var nowTime=Date.now();
+      // var nowTime=new Date().getTime();
+      //获取时间差
+      var timediff=Math.round((time-nowTime)/1000);
+      //获取还剩多少天
+      var day=parseInt(timediff/3600/24);
+      //获取还剩多少小时
+      var hour=parseInt(timediff/3600%24);
+      //获取还剩多少分钟
+      var minute=parseInt(timediff/60%60);
+      //获取还剩多少秒
+      var second=timediff%60;
+      //输出还剩多少时间
+      document.getElementById("dat-db").innerHTML=hour;
+      document.getElementById("dat-dg").innerHTML=minute;
+      document.getElementById("dat-de").innerHTML=second;
+      setTimeout(show,1000);
+      if(timediff==0){return;}
+    }
+    setInterval(show(),1000);
+    /*活动倒计时结束*/
+    // 搜索栏滚动固定
+    window.onscroll=function(){
+      const md=document.getElementById("sbtn"),
+        cl_left=document.getElementById("cl-left"),
+        cl_right=document.getElementById("cl-right");
+      var top=window.scrollY;
+      if(top>80){
+        md.style.cssText="display:block";
+      }else if(top<80){
+        md.style.cssText="";
+      }
+      if(top>630){
+        cl_left.style.cssText="position:fixed;top:50px;";
+        cl_right.style.cssText="position:fixed;top:115px;";
+      }else if(top<630){
+        cl_left.style.cssText="";
+        cl_right.style.cssText="";
+      }
+    }
+    // 获取数据
+    window.onload=function(){
+      var xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=()=>{
+        if(xhr.readyState==4 && xhr.status==200){
+          var res=JSON.parse(xhr.responseText);
+          // console.log(res)
+          for(var i=0;i<res.length;i++){
+            sh_left.innerHTML+=`
+            <li class="sh-li">
+              <img src="${res[i].details}">
+              <div>
+                <ul>
+                  <li class="sh-lil">
+                    <h4>${res[i].title}</h4>
+                  </li>
+                  <li class="sh-li2">${res[i].subtitle}</li>
+                  <li class="sh-li3"><b>￥${res[i].price}</b></li>
+                  <li class="sh-li4">
+                    <div>
+                      <div class="process">
+                        <b style="width:91.5%"></b>
+                      </div>
+                      <p>
+                          剩余<span>183</span>件
+                      </p>
+                    </div>
+                    <div class="goods-btn"><a href="goodsinfo.html?lid=${res[i].lid}">商品详情</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            `
+          }
+        }
+      }
+      var family_id=1;
+      xhr.open("get",`/index/productlist?family_id=${family_id}`,true);
+
+      xhr.send();
+    }
+
+      /*倒计时结束*/
+
+    // const action=document.querySelector(".cb-img"),
+    //       cl_li=document.querySelectorAll(".cb-li1-ul li")[0];
+    //       console.log(action);
+    // cl_li.onmouseenter=() =>{
+    //   action.style.cssText="width:100px;height:100px;";
+    // }
+  </script>
+</body>
+</html>

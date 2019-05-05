@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="CSS/res.css">
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body>
+  <header>
+    <div class="head">
+      <div class="log">
+        <a href="#" title="欢乐购" class="logo"></a>
+        <b>欢 乐 购</b>				
+        <ul>
+          <li>我</li>
+          <li>们</li>
+          <li>的</li>
+          <li>美</li>
+          <li>好</li>
+          <li>世</li>
+          <li>界</li>
+        </ul>
+      </div>
+      <div class="top-img">			
+      </div>
+    </div>
+  </header>
+  <div class="f2">
+    <div class="item2"><a href="#"><img src="images/reg/center.png"></a></div>
+    <div class="item3">
+      <div class="form">
+        <div class="top">
+          <div class="top1">
+            <span class="text">欢迎注册</span>
+            <span class="gotologin">
+              已有帐号？<a href="javascript:;" class="">去登录&gt;</a>
+            </span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="input"><input type="text" id="uname" class="form-input sj" placeholder="请输入用户名"></div>
+          <div class="input"><input type="text" id="upwd" class="form-input1 sj" placeholder="请输入密码">
+            <!-- <button class="bt">获取验证码</button> -->
+          </div>
+          <!-- <div class="input"><input type="text" class="form-input mm" placeholder="请输入密码"></div> -->
+          <div class="input"><input onclick="regFun()" value="注册" class="btn btn-block"></div>
+          <div class="input in"><input type="checkbox" class="checkbox" />我同意《服务条款》和《隐私条款》</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="f5">
+      <span class="foo">About NetEase | </span>
+      <span class="foo">公司简介 | </span>
+      <span class="foo">联系方法 | </span>
+      <span class="foo">友情链接 | </span>
+      <span class="foo">招聘信息 | </span>
+      <span class="foo">客户服务 | </span>
+      <span class="foo">隐私政策 | </span>
+      <span class="foo">网络营销 | </span>
+      <span class="foo">网易考拉 </span>
+    </div>
+    <div class="f6">
+      <span class="foo1">网络文化经营许可证：浙网文[2016]0155-055号</span>
+      <span class="foo1">增值电信业务经营许可证：浙B2-20160288</span>
+      <span class="foo1">自营经营者信息</span>
+      <span class="foo1">（浙）网械平台备字[2018]第00007号</span>
+    </div>
+    <div class="f6">
+      <span class="foo1">
+        <a href="#" class="logo3"><img src="images/reg/logo3.png"></a>
+        浙公网安备 33010802002216号</span>
+      <span class="foo1">网易公司版权所有©1997-2019</span>
+      <span class="foo1">互联网药品信息服务资格证书编号（浙）-2017-0027 </span>
+      <span class="foo1">浙ICP备16011229号-6</span>
+    </div>
+    <div class="f7">
+      <span class="foo1"><a href="#" class="logo4"><img src="images/reg/logo4.png"></a></span>
+      <span class="foo1"><a href="#" class="logo5"><img src="images/reg/logo5.gif"></a></span>
+    </div>
+  </div>
+  <script>
+    function regFun(){
+      var xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=function(){
+        console.log(xhr.readyState,xhr.status);
+        if(xhr.readyState==4&& xhr.status==200){
+          var result=xhr.responseText;
+          console.log(result);
+        }
+      }
+      xhr.open("post","/reg/reg",true);
+
+      xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      var formData=`uname=${uname.value}&upwd=${upwd.value}`;
+      xhr.send(formData);
+    }
+  </script>
+</body>
+</html>

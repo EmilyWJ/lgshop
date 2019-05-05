@@ -1,0 +1,161 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="CSS/login.css">
+		<title>登录</title>
+	</head>
+	<body>
+		<!-- 	header	 -->
+		<div class="head">
+			<div class="log">
+				<a href="#" title="欢乐购" class="logo"></a>
+				<b>欢 乐 购</b>				
+				<ul>
+					<li>我</li>
+					<li>们</li>
+					<li>的</li>
+					<li>美</li>
+					<li>好</li>
+					<li>世</li>
+					<li>界</li>
+				</ul>
+			</div>
+			<div class="top-img">			
+			</div>
+		</div>
+		<!-- section -->
+		<div class="banner">
+			<a href="#" class="hot"></a>
+			<div class="login">
+				<div class="top">
+					<div class="head1 active">手机号登录</div>
+					<span class="line">&nbsp;</span>
+					<div class="head2">邮箱登录</div>
+				</div>
+				<div class="m1">
+					<div class="m2">
+						<a href="#">使用密码验证登录</a>
+					</div>
+					<div class="inputbox">
+						<div class="t1">						
+								<div  align="center">
+									<input type="text" class="uname" id="uname" placeholder='请输入手机号' >
+								</div>		
+								<div align="center">
+									<input type="text" class="upwd" id="upwd" placeholder="请输入短信验证码">
+									<a class="a1" href="#">获取验证码</a>
+								</div>					
+						</div>
+					</div>
+					<div class="but">
+						<a href="#" onclick="getLogin()">登&nbsp;录</a>
+					</div>
+					<div class="sel">
+						<span>
+							<input type="checkbox" id="auto"checked>			
+						</span>
+						<label for="auto">10天免登录</label>
+						<a href="#">遇到问题?</a>
+					</div>
+					<div class="proto">	
+						<a href="#">"隐私权相关政策"</a>
+						登录即代表您已同意
+					</div>				
+				</div>
+				<div class="bottom">
+					<ul class="all">
+						<li class="one">
+							<a class="onea" href="#"></a>
+ 							<span class="oneaa"></span>
+						</li>
+						<li class="two">
+							<a class="twoa" href="#"></a>
+ 							<span class="twoaa"></span>
+						</li>
+						<li class="three">
+							<a class="threea" href="#"></a>
+ 							<span class="threeaa"></span>
+						</li>
+						<li class="four">
+							<a class="foura" href="#"></a>
+ 							<span class="fouraa"></span>
+						</li>
+					</ul>
+					<a href="#" class="pp">手机快捷注册
+						<span class="ppp">&nbsp;</span>
+						</a>					
+				</div>	
+			</div>
+		</div>
+		<!-- foot -->
+		<div class="foot">
+			<div class="footer">
+				<a class="ss" href="#">About NetEase</a>
+				<span>|</span>
+				<a  class="ss" href="#">公司简介</a>
+				<span>|</span>
+				<a  class="ss" href="#">联系方法</a>
+				<span>|</span>
+				<a  class="ss" href="#">友情链接</a>
+				<span>|</span>
+				<a  class="ss" href="#">招聘信息</a>
+				<span>|</span>
+				<a  class="ss" href="#">客户服务</a>
+				<span>|</span>
+				<a  class="ss" href="#">隐私政策</a>
+				<span>|</span>
+				<a  class="ss" href="#" >网络营销</a>
+				<span>|</span>
+				<a  class="ss" href="#">网易考拉</a>
+				<br>
+				<span class="fs">网络文化经营许可证：浙网文[2016]0155-055号</span>
+				<span class="fs">增值电信业务经营许可证：浙B2-20160288</span>
+				<span class="fs"><a href="#" >自营经营者信息</a></span>
+				<span class="fs">（浙）网械平台备字[2018]第00007号</span>
+				<br>
+				<a href="#"  class="aa">
+					<a class="ab" href="#"></a>					
+					<a class="ac"></a>
+					<span class="sss">浙公网安备 33010802002216号</span>
+				</a>
+
+				<span class="fs">网易公司版权所有©1997-2019</span>
+				<a href="#">
+					<span class="sss">互联网药品信息服务资格证书编号（浙）-2017-0027</span>
+				</a>
+				<span class="fs">浙ICP备16011229号-6</span>
+				<div class="puc">
+					<span class="ba">
+						<a href="#" class="bb"></a>
+						<a href="#" class="bc"></a>
+					</span>
+					<span class="ca">
+						<a href="#" class="cb"></a>
+						<a href="#" class="cc"></a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<script>
+			function getLogin(){
+				var xhr=new XMLHttpRequest();
+
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						var result=xhr.responseText;
+						if(result){
+							alert('登录成功');
+							window.location.href="http://127.0.0.1:3000/Home.html";
+						}else{
+							alert('用户名或密码错误');
+						}
+					}
+				}
+
+				xhr.open("get",`/login/login?uname=${uname.value}&upwd=${upwd.value}`,true);
+
+				xhr.send();
+			}
+		</script>
+	</body>
+</html>

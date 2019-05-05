@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="CSS/main.css">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    input{
+      outline: 0;
+    }
+    .u-gap,.cont-price span{
+      display: inline-block;
+    }
+    .cont-ul,#content,.p-span{
+      display: flex;
+      justify-content: space-between;
+    }
+    .pi{
+      text-decoration: underline;
+    }
+    .container{
+      width: 60%;
+      margin:0px auto;
+      text-align: center;
+      font-size: 12px;
+    }
+    .container>p{
+      width: 400px;
+      padding: 10px 0;
+      text-align: left;
+      line-height: 20px;
+      color:#333;
+    }
+    .u-gap{
+      width: 10px;
+      padding:0 5px;
+      zoom:1;
+      color: #999;
+      font-weight: bolder;
+      font-size: 14px;
+    }
+    .inp-i,.cont-ul,.cont-price span{
+      border:1px solid #eaeaea;
+    }
+    .inp-i{
+      width: 130px;
+      height: 18px;
+      padding:2px 5px;
+    }
+    .porduct-list{
+      width: 264px;
+      height: 388px;
+      text-align: left;
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #fff;
+    }
+    .porduct-list:hover{
+      border:1px solid #ff2337;
+    }
+    .porduct-list>.imgs{
+      width: 262px;
+      height: 257px;
+    }
+    #content{
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .cont-title{
+      width: 100%;
+      height: 38px;
+      margin-top:7px;
+      background-color: #fff;
+    }
+    .cont-ul li{
+      width: 70px;
+      height: 100%;
+      font-size: 15px;
+      line-height: 37px;
+      text-align: center;
+    }
+    .cont-tent{
+      border-right: 1px solid #eaeaea;
+    }
+    .con{
+      border:1px solid #ff2337;
+      color: #ff2337;
+    }
+    .cont-ul li:nth-child(5){
+      width: 200px;
+      margin-left: 10px;
+    }
+    .cont-ul>li.cont-price{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 220px;
+    }
+    .cont-price input{
+      width: 40px;
+      height: 18px;
+      font-size: 10px;
+      text-align: center;
+      vertical-align: middle;
+      color:#333;
+    }
+    .cont-ul li:nth-child(6){
+      width: 250px;
+    }
+    .cont-add input{
+      width: 150px;
+    }
+    .img-p{
+      font-size: 22px;
+      color: #e31436;
+      font-weight: 700;
+    }
+    .imh-s,.img-i{
+      display: inline-block;
+    }
+    .img-i{
+      width: 20px;
+      height: 15px;
+      vertical-align: top;
+      font-size: 1px;
+      border:1px solid #e31436;
+      color: #e31436;
+    }
+    .img-s{
+      width: 50px;
+      color: #999;
+    }
+    .porduct-list p{
+      margin-top: 5px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    /* .porduct-list:hover .porduct-list p{
+      margin-top:5px;
+      white-space:normal;
+      text-overflow:initial;
+      overflow:auto;
+    } */
+    .p-spa span{
+      margin:0 4px;
+      padding: 2px;
+      background-color: #e31436;
+      color: #fff;
+      border-radius: 3px;
+    }
+    .p-span span:first-child{
+      font-weight: 550;
+      color: #333;
+    }
+    .p-span span:last-child{
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="home">
+    <!-- 头部 -->
+    <div id="head"></div>
+    <div class="dh-top" id="sbtn">
+      <div class="main-dh">
+        <div id="main-dh-one">
+          <div class="logo-dh">
+            <div class="logoko-dh">
+              <img src="images/logoko.png" width="50px" height="40px">
+              <b>欢 乐 购</b>
+            </div>
+            <div class="logotxt-dh">
+              <ul>
+                <li>我</li>
+                <li>们</li>
+                <li>的</li>
+                <li>美</li>
+                <li>好</li>
+                <li>世</li>
+                <li>界</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dh-right-dh">
+            <div class="dh-search-dh">
+              <div class="search-dh">
+                <input class="search-input" id="i1" type="text" value="面膜" style="height:30px;">
+                <a href="#" class="search-btn-dh" onclick="kw(this)">
+                  <i class="iconfont-dh"></i>
+                  <i class="lin-dh"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 查询到的商品展示 -->
+    <div class="main-content">
+      <div class="container">
+        <p>全部结果
+          <b class="u-gap"> > </b>
+          <input id="i1" type="text" class="inp-i"> 商品共
+          <span id="num"></span>个
+        </p>
+        <div class="cont-title">
+          <ul class="cont-ul">
+            <li class="cont-tent con">综合</li>
+            <li class="cont-tent">销量</li>
+            <li class="cont-tent">新品</li>
+            <li class="cont-tent">价格</li>
+            <li class="cont-price">
+              ￥<input type="text" placeholder="最低价" id='minPrice' ></span>
+              -
+              ￥<input type="text" placeholder="最高价" id='maxPrice' ></span>
+              <input type="button" value='搜索' onclick="search()">
+            </li>
+            <li class="cont-add">
+              收货地
+              <input type="text" placeholder="上海/黄浦区">
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div id="content">
+        </div>
+      </div>
+    </div>
+    <footer class="floor">
+    </footer>
+  </div>
+  <script src="JS/jquery-3.4.1.min.js"></script>
+  <script src="JS/main.js"></script>
+  <script>
+    // 关键字查询
+    window.onload=()=>{
+      content.innerHTML='';
+      var urlParams=new URLSearchParams(location.search);
+      i1.value=urlParams.get("kws");
+      let xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=()=>{
+        if(xhr.readyState==4&&xhr.status==200){
+          let res=JSON.parse(xhr.responseText);
+          // console.log(res);
+          num.innerHTML=res.length;
+          
+          for(var i=0;i<res.length;i++){
+            content.innerHTML+=`
+            <div class="porduct-list" onclick="getFun(${res[i].lid})">
+              <div class="imgs"><img src='${res[i].details}'></div>
+              <p>${res[i].title}</p>
+              <p>
+              <span class="img-p">￥${res[i].price}</span>
+              <i class="img-i">3折</i>
+              <s class="img-s">¥${res[i].p_price}</s></p>
+              <p class="p-spa">
+              <span>满2件享9.5折</span>
+              <span>券满299减30</span>
+              <span>限时购</span>
+              </p>
+              <p>包邮</p>
+              <p class="p-span"><span>${res[i].sold_count}</span><span>韩国</span></p>
+              <p class="pi">乐购自营</p>
+            </div>
+            `
+          }
+        }
+      }
+      xhr.open('get',`/product/keyWords?kws=${i1.value}`,true);
+      xhr.send(null);
+    }
+
+    // 
+    const lis=document.querySelectorAll(".alllist-cont"),
+          alis=document.querySelectorAll(".alllist-one");
+          //console.log(alis);
+    let   aleng=alis.length,
+          leng=lis.length;
+    for(let i=0;i<aleng;i++){
+      alis[i].onmouseenter=() =>{
+        console.log(i);
+        lis[i].style.cssText="display:block";
+      };
+      alis[i].onmouseleave=() =>{
+        lis[i].style.cssText="";
+      };
+    }
+    function getFun(obj){
+      window.location.href=`goodsinfo.html?=${obj}`
+    }
+
+    // 价格查询
+    function search(){
+      content.innerHTML='';
+      let xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=()=>{
+        if(xhr.readyState==4&&xhr.status==200){
+          let res=JSON.parse(xhr.responseText);
+          console.log(res);
+          if(res==0)
+            content.innerHTML=`<h1>未搜索商品</h1>`
+          else{
+            num.innerHTML=res.length;
+            for(var i=0;i<res.length;i++){
+              content.innerHTML+=`
+              <div class="porduct-list" onclick="getFun(${res[i].lid})">
+                <div class="imgs"><img src='${res[i].details}'></div>
+                <p>${res[i].title}</p>
+                <p>
+                <span class="img-p">￥${res[i].price}</span>
+                <i class="img-i">3折</i>
+                <s class="img-s">¥${res[i].p_price}</s></p>
+                <p class="p-spa">
+                <span>满2件享9.5折</span>
+                <span>券满299减30</span>
+                <span>限时购</span>
+                </p>
+                <p>包邮</p>
+                <p class="p-span"><span>${res[i].sold_count}</span><span>韩国</span></p>
+                <p class="pi">乐购自营</p>
+              </div>
+              `
+            }
+          }
+        }
+      }
+      let box='';
+      if(minPrice.value>maxPrice.value){
+        box=maxPrice.value;
+        maxPrice.value=minPrice.value;
+        minPrice.value=box;
+      }
+      xhr.open('get',`/product/price?minPrice=${minPrice.value}&maxPrice=${maxPrice.value}`,true);
+      xhr.send(null);
+    }
+  </script>
+</body>
+</html>

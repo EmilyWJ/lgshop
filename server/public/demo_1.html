@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *
+
+{
+
+    padding:0px;
+
+    margin:0px;
+
+    font-family:"微软雅黑";
+
+}
+
+#header
+
+{
+
+    height:100px;
+
+    border:solid 1px red;
+
+    margin:0px auto;
+
+}
+
+#main
+
+{
+
+    margin:10px auto;
+
+    height:400px;
+
+}
+
+#footer
+
+{
+
+    margin:0px auto;
+
+    height:100px;
+
+    border:solid 1px red;
+
+}
+@media screen and (min-width:900px)
+
+{
+
+    #header,#footer
+
+    {
+
+        width:800px;
+
+    }
+
+    #main
+
+    {
+
+        width:800px;
+
+        height:400px;
+
+    }
+
+    #main-left
+
+    {
+
+        width:200px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+        float:left;  /*以下均要设置左浮动，保证在同一行*/
+
+    }
+
+    #main-center
+
+    {
+
+        width:394px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+        float:left;
+
+    }
+
+    #main-right
+
+    {
+
+        width:200px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+        float:left;
+
+    }
+
+}
+@media screen and (min-width:600px) and (max-width:900px)
+
+{
+
+    #header,#footer
+
+    {
+
+        width:600px;
+
+    }
+
+    #main
+
+    {
+
+        width:600px;
+
+        height:400px;;
+
+    }
+
+    #main-left
+
+    {
+
+        width:200px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+        float:left; /*以下均要设置左浮动，保证在同一行*/
+
+    }
+
+    #main-center
+
+    {
+
+        width:396px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+        float:left;
+
+    }
+
+    #main-right
+
+    {
+
+        display:none; /*隐藏内容右边*/
+
+    }
+
+}
+
+@media screen and (max-width:600px)
+
+{
+
+    #header,#footer
+
+    {
+
+        width:300px;
+
+    }
+
+    #main
+
+    {
+
+        width:300px;
+
+        height:400px;
+
+    }
+
+    #main-left
+
+    {
+
+        display:none; /*隐藏内容左边*/
+
+    }
+
+    #main-center
+
+    {
+
+        width:300px;
+
+        height:400px;
+
+        border:solid 1px red;
+
+    }
+
+    #main-right
+
+    {
+
+        display:none;  /*隐藏内容右边*/
+
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div id="header">头部</div>
+    
+    <div id="main">
+    
+        <div id="main-left">内容-左边</div>
+    
+        <div id="main-center">内容-中间</div>
+    
+        <div id="main-right">内容-右边</div>
+    
+    </div>
+    
+    <div id="footer">底部</div>
+</body>
+</html>
