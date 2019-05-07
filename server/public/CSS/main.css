@@ -172,7 +172,7 @@ address, b, caption, cite, code, dfn, em, i, th, var,a {
   /* border:1px solid red; */
 }
 .logo{
-  width:230px;
+  width:290px;
   height:120px;
 }
 .logoko{
@@ -198,9 +198,9 @@ address, b, caption, cite, code, dfn, em, i, th, var,a {
 }
 .dh-right{
   position:absolute;
-  right:3%;
+  right:0;
   top:42px;
-  width:66%;
+  width:68%;
   height:70px;
   display: flex;
   /* border:1px solid red; */
@@ -208,7 +208,7 @@ address, b, caption, cite, code, dfn, em, i, th, var,a {
 /*首页购物车*/
 .sear-car{
   display: inline-block;
-  width: 106px;
+  width: 115px;
   height: 36px;
   margin-top: 2px;
   border-radius: 36px;
@@ -217,25 +217,31 @@ address, b, caption, cite, code, dfn, em, i, th, var,a {
   font-size: 14px;
   cursor: pointer;
 }
+.sear-car:hover{
+  background-color: #fff4f5;
+}
+.sear-car:hover .sear-re{
+  color: #ff1e32;
+}
 .sear-car i{
   display: inline-block;
   width: 20px;
   height: 20px;
   background: url('../images/search_car.png') no-repeat;
-  margin-top:7px;
+  margin:7px 0 0 7px;
 }
 .sear-car span{
   display: inline-block;
-  margin-left: 5px;
   vertical-align: top;
 }
-.sear-car>span>b{
+.sear-car>span>em{
   display: inline-block;
   width: 20px;
   height: 20px;
   margin-top: 9px;
   background-color: #ff1e32;
   color: #fff;
+  line-height: 19px;
   border-radius: 40px;
   font-size: 12px;
 }
@@ -764,6 +770,7 @@ address, b, caption, cite, code, dfn, em, i, th, var,a {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  box-shadow: 1px 0px 8px #ccc;
 }
 .ml-di{
   margin:10px auto;

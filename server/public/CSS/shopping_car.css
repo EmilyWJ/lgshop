@@ -1,288 +1,289 @@
 .shoppingbox{
-    width: 1090px;
-    margin: 10px auto;
+  width: 1090px;
+  margin: 10px auto;
 }
 .c1{
-    margin-right: 873px;
+  margin-right: 873px;
 }
 .head1{
-    color: #999;
-    width: 1090px;
-    height: 36px;
-    border: 1px solid #eaeaea;
+  color: #999;
+  width: 1090px;
+  height: 36px;
+  border: 1px solid #eaeaea;
 }
 #i1{
-    width: 17px;
-    height: 18px;
-    float: left;
-    margin: 10px 10px 0 12px;
+  width: 17px;
+  height: 18px;
+  float: left;
+  margin: 10px 10px 0 12px;
 }
 .col1{
-    width: 410px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  width: 410px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .col2{
-    width: 148px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  width: 148px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .col3{
-    width: 145px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  width: 145px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .col4{
-    width: 126px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  width: 126px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .col5{
-    width: 107px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  width: 107px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .col6{
-    color: #000;
-    width: 100px;
-    height: 36px;
-    line-height: 36px;
-    float: left;
+  color: #000;
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
 }
 .d2{
-    width: 1090px;
-    height: 39px;
-    color: #000;
-    font-weight:bold;
-    font-size :15px;
-    padding: 15px 0px 5px 9px;
+  width: 1090px;
+  height: 39px;
+  color: #000;
+  font-weight:bold;
+  font-size :15px;
+  padding: 15px 0px 5px 9px;
 }
 .d2 input{
-    width: 22px;
-    height: 16px;
-    margin: 0px 12px 0px 0px;
-    vertical-align: middle;
+  width: 22px;
+  height: 16px;
+  margin: 0px 12px 0px 0px;
+  vertical-align: middle;
 }
 .d2 a:hover{
-    color: rgb(207, 15, 15);
-    text-decoration:underline; 
+  color: rgb(207, 15, 15);
+  text-decoration:underline; 
 }
 .d3{
-    width: 1090px;
-    height: 130px;
-    border: 1px solid #eaeaea;
+  width: 1090px;
+  border: 1px solid #eaeaea;
 }
 .d3u1{
-    width: 1090px;
-    height: 121px;
+  width: 1090px;
+  height: 133px;
+  border-bottom: 1px solid #ccc;
 }
 .d3d1{
-    margin: 50px 0px 0px 11px;
-    margin: 45px 8px auto;
-    float: left;
+  margin: 50px 0px 0px 11px;
+  margin: 45px 8px auto;
+  float: left;
 }
 .d3d1 input{
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 .d3d2{
-    width: 100px;
-    height: 80px;
-    margin: 20px auto;
-    float: left;
+  width: 100px;
+  height: 80px;
+  margin: 20px auto;
+  float: left;
 }
 .d3a1 img{
-    width: 80px;
-    height: 80px;
-    /* margin: -50px 0px 0px 40px; */
+  width: 80px;
+  height: 80px;
+  /* margin: -50px 0px 0px 40px; */
 }
 .d3d3{
-    width: 250px;
-    height: 80px;
-    /* margin: -135px 0px 0px 139px; */
-    font-size: 14px;
-    margin: 16px auto;
-    float: left;    
+  width: 250px;
+  height: 80px;
+  /* margin: -135px 0px 0px 139px; */
+  font-size: 14px;
+  margin: 16px auto;
+  float: left;    
 }
 .d3d3 a:hover{
-    color: #e31436;
+  color: #e31436;
 }
 .d3p1{
-    width: 220px;
-    height: 22px;
-    color: #666;
-    font-size: 11px;
-    margin: 4px 0px 0px 0px;
+  width: 220px;
+  height: 22px;
+  color: #666;
+  font-size: 11px;
+  margin: 4px 0px 0px 0px;
 }
 .d3p2{
-    padding: 0 6px 0 8px;
-    border: 1px solid #f3c7c7;
-    color: #e31436;
-    background-color: #fff;
-    border-radius: 10px;
-    /* padding: 0px 6px 0px 9px; */
+  padding: 0 6px 0 8px;
+  border: 1px solid #f3c7c7;
+  color: #e31436;
+  background-color: #fff;
+  border-radius: 10px;
+  /* padding: 0px 6px 0px 9px; */
 }
 .d3p2:hover{
-    background-color: #e31436;
-    color: #eaeaea;
+  background-color: #e31436;
+  color: #eaeaea;
 }
 .d3p3{
-    transition: transform .2s ease-in;
+  transition: transform .2s ease-in;
 }
 .d3p2:hover .d3p3{
-    color: #fff;
+  color: #fff;
 }
 .d3d4{
-    width: 108px;
-    height: 80px;
-    color: #666;
-    float: left;
-    margin: 18px 24px auto;
+  width: 108px;
+  height: 80px;
+  color: #666;
+  float: left;
+  margin: 18px 24px auto;
 }
 .d3d5p1{
-    text-decoration:line-through;
-    color: #666;
-    font-size: 12px;
+  text-decoration:line-through;
+  color: #666;
+  font-size: 12px;
 }
 .d3d5{
-    width: 36px;
-    height: 80px;
-    margin: 18px auto;
-    float: left;
+  width: 36px;
+  height: 80px;
+  margin: 18px auto;
+  float: left;
 }
 .d3d6{
-    height: 60px;
-    float: left;
-    margin: 21px 88px auto;
-    text-align: center;
+  height: 60px;
+  float: left;
+  margin: 21px 88px auto;
+  text-align: center;
 }
 .d3d5p2{
-    font-size: 15px;
+  font-size: 15px;
 }
 .d3d6b1{
-    width: 20px;
-    height: 20px;
-    margin-right:-5px;
-    line-height: 14px;
+  margin-right: -5px;
+}
+.d3d6b1,.d3d6b2{
+  width: 22px;
+  height: 22px;
+  line-height: 14px;
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 .d3d6i1{
-    height: 14px;
-    width: 40px;
-   text-align: center; 
+  height: 18px;
+  width: 40px;
+  text-align: center; 
 }
 .d3d6b2{
-    width: 20px;
-    height: 20px;
-    margin-left:-5px;
-    line-height: 14px;
+  margin-left:-5px;
 }
 .d3d6p1{
-    color: #e31436;
+  color: #e31436;
 }
 .d3d7{
-    width: 40px;
-    height: 20px;
-    color: #000;
-    font-size: 15px;
-    font-weight:bold;
-    float: left;
-    margin: 20px auto;
+  width: 40px;
+  height: 20px;
+  color: #000;
+  font-size: 15px;
+  font-weight:bold;
+  float: left;
+  margin: 20px auto;
 }
 .d3d8{
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin: 21px 0 0 89px;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 21px 0 0 89px;
 }
 .d3d8 a{
-    color: #333333;
+  color: #333333;
 }
 .d3d8 a:hover{
-    text-decoration:underline; 
+  text-decoration:underline; 
 }
 .d4{
-    width: 1090px;
-    height: 38px;
-    border: 1px solid #eaeaea;
-    margin: 20px auto;
+  width: 1090px;
+  height: 38px;
+  border: 1px solid #eaeaea;
+  margin: 20px auto;
 }
 .d4 span{
-    width: 156px;
-    height: 36px;
-    float: right;
-    line-height: 36px;
+  width: 156px;
+  height: 36px;
+  float: right;
+  line-height: 36px;
 }
 .d5{
-    width: 1090px;
-    height: 60px;
-    border: 1px solid #eaeaea;
-    margin: 36px auto;
-    background-color: #f8f8f8;
+  width: 1090px;
+  height: 60px;
+  border: 1px solid #eaeaea;
+  margin: 36px auto;
+  background-color: #f8f8f8;
 }
 .d5d1{
-    width: 160px;
-    height: 40px;
-    line-height: 60px;
+  width: 160px;
+  height: 40px;
+  line-height: 60px;
 }
 .d5d1 input{
-    width: 16px;
-    height: 16px;
-    margin: 0 6px 0 11px;
-    vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px 0 11px;
+  vertical-align: middle;
 }
 .d5d1 a{
-    margin-left: 18px;
+  margin-left: 18px;
 }
 .d5d2{
-    width: 438px;
-    height: 30px;
-    float: right;
-    text-align: right;
-    margin: -38px 129px 0 0;
+  width: 438px;
+  height: 30px;
+  float: right;
+  text-align: right;
+  margin: -38px 129px 0 0;
 }
 .d5d2e1{
-    color: #e31436;
-    font-size: 16px;
-    font-weight:bold;
+  color: #e31436;
+  font-size: 16px;
+  font-weight:bold;
 }
 .d5d2e2{
-    color: #e31436;
-    font-size: 16px;
-    font-weight: bold;
+  color: #e31436;
+  font-size: 16px;
+  font-weight: bold;
 }
 .d5d2p2{
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .d5d3{
-    width: 600px;
-    height: 30px;
-    text-align: right;
-    margin:-6px 0 0 380px;
-    color: #666;
+  width: 600px;
+  height: 30px;
+  text-align: right;
+  margin:-6px 0 0 380px;
+  color: #666;
 }
 
 .d5s2{
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .d5s3{
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .d5a1{
-    width: 120px;
-    height: 60px;
-    background-color: #e31436;
-    position: absolute;
-    color: #fff;
-    text-align: center;
-    font-size:18px;
-    margin: -64px 0 0 971px;
-    line-height: 60px;
+  width: 120px;
+  height: 60px;
+  background-color: #e31436;
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  font-size:18px;
+  margin: -64px 0 0 971px;
+  line-height: 60px;
 }
 .d5a1:hover{
-    background-color: #e94d67;
+  background-color: #e94d67;
 }

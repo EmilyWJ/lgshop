@@ -146,6 +146,9 @@ li{
 	height: 40px;
 	vertical-align: bottom;
 }
+.sa:hover{
+	cursor: pointer;
+}
 .sa>.s1,.sa>.s2{
 	display: block;
 	width:15px;height:15px;

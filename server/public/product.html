@@ -54,7 +54,7 @@
       padding:2px 5px;
     }
     .porduct-list{
-      width: 264px;
+      width: 260px;
       height: 388px;
       text-align: left;
       padding: 20px;
@@ -191,7 +191,7 @@
           <div class="dh-right-dh">
             <div class="dh-search-dh">
               <div class="search-dh">
-                <input class="search-input" id="i1" type="text" value="面膜" style="height:30px;">
+                <input class="search-input" id="i1" type="text" placeholder="面膜" style="height:30px;">
                 <a href="#" class="search-btn-dh" onclick="kw(this)">
                   <i class="iconfont-dh"></i>
                   <i class="lin-dh"></i>
@@ -207,7 +207,7 @@
       <div class="container">
         <p>全部结果
           <b class="u-gap"> > </b>
-          <input id="i1" type="text" class="inp-i"> 商品共
+          <input id="i2" type="text" class="inp-i"> 商品共
           <span id="num"></span>个
         </p>
         <div class="cont-title">
@@ -245,9 +245,12 @@
   <script>
     // 关键字查询
     window.onload=()=>{
+      // let i1=document.getElementsByClassName("i1");
+      // console.log(i1);
       content.innerHTML='';
       var urlParams=new URLSearchParams(location.search);
-      i1.value=urlParams.get("kws");
+      i2.value=urlParams.get("kws");
+      // console.log(i1.value);
       let xhr=new XMLHttpRequest();
       xhr.onreadystatechange=()=>{
         if(xhr.readyState==4&&xhr.status==200){
@@ -277,7 +280,7 @@
           }
         }
       }
-      xhr.open('get',`/product/keyWords?kws=${i1.value}`,true);
+      xhr.open('get',`/product/keyWords?kws=${i2.value}`,true);
       xhr.send(null);
     }
 
@@ -297,7 +300,7 @@
       };
     }
     function getFun(obj){
-      window.location.href=`goodsinfo.html?=${obj}`
+      window.location.href=`goodsinfo.html?lid=${obj}`
     }
 
     // 价格查询

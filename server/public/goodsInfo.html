@@ -55,11 +55,11 @@
 							<div class="inset_4">
 					<span>数量</span>
 					<span>
-						<input type="text" value="1" class="text1" title="请输入购买数量">
+						<input type="text" value="1" class="text1" id="text1" title="请输入购买数量">
 					</span>
 					<span class="sa">
-						<s class="s1">+</s>
-						<s class="s2">-</s>
+						<s class="s1" onclick="getAdd()">+</s>
+						<s class="s2" onclick="getMinus()">-</s>
 					</span>
 					<span class="s3">件</span>
 				</div>
@@ -250,6 +250,8 @@
 		<script src="JS/jquery-3.4.1.min.js"></script>
 		<script src="JS/main.js"></script>
 		<script>
+		// 数据是其他格式的，需要转换成对象
+		var lid=location.search.split('=')[1];
 		//  页面加载就执行此函数
 		 window.onload=function(){
 			//  创建异步对象
@@ -260,7 +262,7 @@
         if(xhr.readyState==4 && xhr.status==200){
 					// 接收服务器传过来的数据并将格式转成json对象
 					var res=JSON.parse(xhr.responseText);
-					console.log(res);
+					// console.log(res);
 					// 把数据一一放入对应的标签中
 					mlimg.src=res[0].details;
 					title.innerHTML=res[0].title;
@@ -274,18 +276,49 @@
 							</li>
 						`
 					}
-					inset_5.innerHTML=`<a href="#" class="buy">立即购买</a>
-					<a href="Shopping_Car.html?lid=${res[0].lid}" class="car" >加入购物车</a>`;
+					inset_5.innerHTML=`<a href="buy.html?lid=${res[0].lid}" class="buy">立即购买</a>
+					<a href="#" class="car" onclick="insertCar();">加入购物车</a>`;
         }
 			}
-			// 数据是其他格式的，需要转换成对象
-			var lid=location.search.split('=')[1];
-			console.log(lid);
 			// 打开连接，请求方法为get和路由方法的请求方式要保持一致，通过id获取对应的数据，所以需要将id传给服务器
 			xhr.open("get",`/goodsinfo/detail?lid=${lid}`,true);
 			// 发送请求
       xhr.send();
 		}
+		{
+			// console.log(text1.value);
+			function insertCar(){
+				// 1.先
+				// 2.加入购物车  数量的id 数量存储到sessionStorage
+				// console.log(sessionStorage["id"]);
+				if(sessionStorage["id"]){
+					fetch(`/goodsinfo/getshop?id=${sessionStorage["id"]}&lid=${lid}`).then(res=>res.json()).then(data=>{
+						console.log(data);
+						var count=text1.value;
+						if(data.length>0){
+							fetch(`/goodsinfo/upshop?lid=${lid}&count=${count}`).then(res=>res.json()).then(data=>{
+
+							})
+						}else{
+							fetch(`/goodsinfo/inshop?id=${sessionStorage["id"]}&lid=${lid}&count=${count}`).then(res=>res.json()).then(data=>{
+
+							})
+						}
+					})
+				}else{
+					alert("还没有登录哦~请先前往登录页面进行登录");
+				}
+				// console.log(lid);
+			}
+			const tex=document.getElementsByClassName("text1")[0];
+			function getAdd(){
+				tex.value++;
+			}
+			function getMinus(){
+				tex.value==1?tex.value=1:tex.value--;
+			}
+		}
+		
 		</script>
 	</div>
  </body>

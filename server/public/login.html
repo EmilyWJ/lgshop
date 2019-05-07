@@ -139,13 +139,16 @@
 		<script>
 			function getLogin(){
 				var xhr=new XMLHttpRequest();
-
 				xhr.onreadystatechange=function(){
 					if(xhr.readyState==4 && xhr.status==200){
-						var result=xhr.responseText;
+						var result=JSON.parse(xhr.responseText);
+						// console.log(result[0].uid);
+						sessionStorage["uid"]=result[0].uname;
+						sessionStorage["id"]=result[0].uid;
+						// console.log(sessionStorage);
 						if(result){
 							alert('登录成功');
-							window.location.href="http://127.0.0.1:3000/Home.html";
+							window.location.href="http://127.0.0.1:3000/Home.html?uid="+sessionStorage;
 						}else{
 							alert('用户名或密码错误');
 						}
