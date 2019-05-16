@@ -4,20 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="CSS/main.css">
+  <link rel="stylesheet" href="CSS/head.css">
   <title>Document</title>
 </head>
 <body>
+  <div class="lo"><img src="images/lo.jpg" alt=""></div>
   <div class="top">
     <div class="top-main">
       <div class="top-left">
         <ul>
-          <li id="le">乐乐欢迎您！</li>
+          <li>乐乐欢迎您！</li>
           <li>
-            <a href="login.html" target="_blank">你好，请登录</a>
+            <a href="login.html"  target="_self" id="le">你好，请登录</a>
           </li>
           <li>
-            <a href="reg.html" target="_blank">免费注册</a>
+            <a href="reg.html"  target="_self">免费注册</a>
           </li>
           <li>
             <a href="#">手机惠购</a>
@@ -1057,7 +1058,7 @@
   <script>
   // let i1=document.getElementById("i1");
     if(sessionStorage["uid"]){
-      le.innerHTML=`${sessionStorage["uid"]},小乐乐欢迎您！`;
+      le.innerHTML=`当前用户：${sessionStorage["uid"]}`;
     }
     fetch("/shopping_car/car?user_id="+sessionStorage["id"]).then(res=>res.json()).then(data=>{
       // console.log(data);

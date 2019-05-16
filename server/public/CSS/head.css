@@ -1,0 +1,268 @@
+/*logo、搜索栏区域和导航栏*/
+.lo{
+  height: 80px;
+  overflow: hidden;
+}
+.top{
+  width:100%;
+  height:31px;
+  background-color:#000;
+}
+.top-main{
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 69%;
+}
+.top-left ul{
+  margin-top:5px;
+  display: flex;
+  justify-content: space-between;
+  color:#999;
+  font-size: 13px;
+}
+.top-left ul li{
+  padding-left:25px;
+}
+.top-right{
+  height:27px;
+  font-size:12px;
+  line-height:29px;
+}
+.top-left a,.top-right a{
+  color:#999;
+  text-decoration:none;
+}
+.top-left a:hover, .top-right a:hover{
+  color:#ff2337;
+  cursor:pointer;
+}
+.top-right ul{
+  display: flex;
+  justify-content: space-between;
+  width:430px;
+}
+.main{
+  position:relative;
+  margin:0 auto;
+  width: 69%;
+  /* border:1px solid red; */
+}
+#main-dh{
+  height:165px;
+  /* border:1px solid red; */
+}
+.logo{
+  width:290px;
+  height:120px;
+}
+.logoko{
+  position: absolute;
+  top:20px;
+  width:250px;
+  /* clip: rect(0 auto 121px 0) */
+}
+.logoko b{
+  position:absolute;
+  top:15px;
+  left:110px;
+  font-size:35px;
+}
+.logotxt ul{
+  position: absolute;
+  top:85px;
+  left:12px;
+  width:225px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+.dh-right{
+  position:absolute;
+  right:0;
+  top:42px;
+  width:68%;
+  height:70px;
+  display: flex;
+  /* border:1px solid red; */
+}
+/*首页购物车*/
+.sear-car{
+  display: inline-block;
+  width: 115px;
+  height: 36px;
+  margin-top: 2px;
+  border-radius: 36px;
+  border:2px solid #ff1e32;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.sear-car:hover{
+  background-color: #fff4f5;
+}
+.sear-car:hover .sear-re{
+  color: #ff1e32;
+}
+.sear-car i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/search_car.png') no-repeat;
+  margin:7px 0 0 7px;
+}
+.sear-car span{
+  display: inline-block;
+  vertical-align: top;
+}
+.sear-car>span>em{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 9px;
+  background-color: #ff1e32;
+  color: #fff;
+  line-height: 19px;
+  border-radius: 40px;
+  font-size: 12px;
+}
+.dh-search{
+  width:600px;
+  height:70px;
+}
+.search{
+  width:528px;
+  height:40px;
+  border:2px solid #ff2337;
+  border-radius:40px;
+}
+.search-input{
+  margin:5px 13px;
+  width:79%;
+  height:25px;
+  outline: none;
+  border:none;
+  padding:0 7px;
+  box-sizing: border-box;
+  font-size:13px;
+  color:#999;
+}
+.search-btn{
+  display: block;
+  float:right;
+  top:2px;
+  width:60px;
+  height:40px;
+  cursor: pointer;
+  text-align: center;
+  color:#fff;
+  line-height: 35px;
+  background-color:#ff2337;
+  background-image: linear-gradient(270deg,#ff2e64,#ff0003);
+  border-radius: 40px;
+}
+.iconfont {
+  display: block;
+  margin:7px 16px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border:2px solid #fff;
+}
+.lin{
+  display: block;
+  margin:-8px 29px;
+  width:12px;
+  height:2px;
+  transform:rotate(42deg);
+  background-color:#fff;
+}
+.search-title{
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+  margin:5px 20px;
+  font-size:12px;
+  color:#999;
+}
+.search-title>li:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.dh-list{
+  width:164px;
+  display: flex;
+  justify-content: space-between;
+}
+.list-box{
+  height: 44px;
+}
+.alllist-one{
+  height: 42px;
+}
+.list-box,.alllist-one{
+  width:164px;
+  color:#fff;
+  font-size:13px;
+  background: linear-gradient(90deg,red,#ff3264);
+}
+.alllist-one span:first-child{
+  line-height: 50px;
+}
+.fle{
+  width:164px;
+  display:flex;
+  justify-content: space-around;
+  box-shadow: 5px 5px 10px rgba(55, 55, 55, 0.4);
+}
+.alllist{
+  display: none;
+}
+.list-box:hover .alllist{
+  display: block;
+}
+.list-dh ul{
+  width:946px;
+  display: flex;
+  justify-content:space-around;
+  line-height: 40px;
+  font-size:15px;
+  font-weight:bold;
+}
+.list-dh ul li:hover{
+  cursor: pointer;
+  color: #ff1e32;
+}
+.lineicon{
+  margin:14px 15px;
+  width:15px;
+}
+.lineicon div{
+  width:15px;
+  border-top:2px solid #ddd;
+  margin-bottom: 3px;
+}
+.fle span{
+  width:90px;
+  margin-top:9px;
+  font-size:15px;
+}
+.list-box:hover{
+  cursor: pointer;
+}
+.alllist ul{
+  margin-top:-3px;
+  transition: 1s;
+}
+.alllist-one:hover .alllist-cont{
+  display: block;
+}
+.alllist ul{
+  position: absolute;
+  z-index: 1000;
+}
+.alllist ul li{
+  display: flex;
+  justify-content: space-around;
+  line-height: 42px;
+}

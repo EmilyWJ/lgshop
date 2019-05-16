@@ -13,7 +13,7 @@ const shopRouter=require('./routes/shopping_car');
 
 // 创建web服务器
 var app=express();
-app.listen(3000);
+app.listen(3300);
 
 // cloudo静态资源
 app.use( express.static('public') );

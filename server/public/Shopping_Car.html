@@ -22,7 +22,7 @@
           </select>
       </h3>
       <div class="head1">
-          <input id="i1" type="checkbox">
+          <input id="l1" type="checkbox">
           <div class="col6">全选</div>
           <div class="col1">商品信息</div>
           <div class="col2">单价（元）</div>
@@ -30,27 +30,23 @@
           <div class="col4">金额（元）</div>
           <div class="col5">操作</div>
       </div>
-      <div class="d2">
-          <input type="checkbox" id='i2'>
-          <a href="#">幽美瑞品手表专营店</a>
-      </div>
       <div class="d3" id="d3">
           
       </div>
       <div class="d4">
           <span class="d4s1">活动优惠：-￥0.00</span>
-          <span class="d4s2" id="d466"></span>
+          <span class="d4s2" id="d466">商品应付总计：￥0</span>
           <span class="d4s3">预估税费：￥0.00</span>
       </div>
       <div class="d5">
         <div class="d5d1">
-          <input type="checkbox" id="i4">
+          <input type="checkbox">
           <span style="font-size: 13px;">全选</span>
           <a href="#">删除选中商品</a>
         </div>
         <div class="d5d2">
-          <span class="d5d2p1">已选商品 <em class="d5d2e1" id="d7"> 1 </em> 件</spam>
-          <span class="d5d2p2">总价（不含运费）：<em class="d5d2e2" onclick="getFun();" id="d5d22"></em></span>
+          <span class="d5d2p1">已选商品 <em class="d5d2e1"> 0 </em> 件</spam>
+          <span class="d5d2p2">总价（不含运费）：<em class="d5d2e2"></em></span>
         </div>
         <div class="d5d3">
           <span class="d5s1">活动优惠：-￥0.00</span>
@@ -67,128 +63,119 @@
 <script src="JS/main.js"></script>
 <script>
   //  页面加载就执行此函数
-    window.onload=function(){
-    //  创建异步对象
-        var xhr=new XMLHttpRequest();
+  window.onload=function(){
+  //  创建异步对象
+  var xhr=new XMLHttpRequest();
     // 绑定监听，监听请求是否发送
-        xhr.onreadystatechange=function(){
-      // 判断当前异步请求的状态
-            if(xhr.readyState==4 && xhr.status==200){
-        // 接收服务器传过来的数据并将格式转成json对象
-                var res=JSON.parse(xhr.responseText);
-                console.log(res);
-                let len=res.length;
-                si.innerHTML=len;
-                  // 把数据一一放入对应的标签中
-                for (let i = 0; i < len; i++) {
-                d3.innerHTML+=`
-                <ul class="d3u1">
-                      <li class="d3l1">
-                          <div class="d3d1">
-                              <input type="checkbox" id="i3">
-                          </div>
-                          <div class="d3d2">
-                              <a href="#" class="d3a1">
-                                  <img src="${res[i].details}" alt="">
-                              </a>
-                          </div>
-                          <div class="d3d3">
-                              <a href="#" class="d3a2">${res[i].title}</a> 
-                              <p class="d3p1"><img src="images/shopcar/shoppingcar2.png" alt="">支持7天无忧退货
-                              </p>
-                              <p>
-                                  <span class="d3p2">
-                                      特价 <a class="d3p3">^</a>
-                                  </span>
-                              </p>
-                          </div>
-                          <div class="d3d4">颜色：黑色</div>
-                          <div class="d3d5">
-                              <p class="d3d5p1">${res[i].p_price}</p>
-                              <p class="d3d5p2" id="price">${res[i].price}</p>
-                          </div>
-                          <div class="d3d6">
-                              <button class="d3d6b1" onclick='sub()'>-</button>
-                              <input type="text" class="d3d6i1" id='num' value='1'>
-                              <button class="d3d6b2" onclick='add()'>+</button>
-                              <p class="d3d6p1">仅剩9件</p>
-                          </div>
-                          <div class="d3d7" id="d1">${res[i].price}</div>
-                          <div class="d3d8">
-                              <a href="#" onclick="delet()">删除</a>
-                              <br>
-                              <a href="#">移入我的收藏</a>
-                          </div>
-                      </li>
-                  </ul>
-                `;
-                }
-              d466.innerHTML=`商品应付总计：￥${res[0].price}`;
-              d5d22.innerHTML=`￥${res[0].price}`;
-              d522.innerHTML=`商品应付总计：￥${res[0].price}`;
-            }
+    xhr.onreadystatechange=function(){
+    // 判断当前异步请求的状态
+    if(xhr.readyState==4 && xhr.status==200){
+    // 接收服务器传过来的数据并将格式转成json对象
+      var res=JSON.parse(xhr.responseText);
+      console.log(res);
+      let len=res.length;
+      si.innerHTML=len;
+        // 把数据一一放入对应的标签中
+      for (let i = 0; i < len; i++) {
+        d3.innerHTML+=`
+          <ul class="d3u1">
+              <li class="d3l1">
+                <div class="d3d1">
+                  <input type="checkbox" id="i3">
+                </div>
+                <div class="d3d2">
+                  <a href="#" class="d3a1">
+                    <img src="${res[i].details}" alt="">
+                  </a>
+                </div>
+                <div class="d3d3">
+                  <a href="#" class="d3a2">${res[i].title}</a> 
+                  <p class="d3p1"><img src="images/shopcar/shoppingcar2.png" alt="">支持7天无忧退货
+                  </p>
+                  <p>
+                    <span class="d3p2">
+                      特价 <a class="d3p3">^</a>
+                    </span>
+                  </p>
+                </div>
+                <div class="d3d4">颜色：黑色</div>
+                <div class="d3d5">
+                  <p class="d3d5p1">${res[i].p_price}</p>
+                  <p class="d3d5p2" id="price">${res[i].price}</p>
+                </div>
+                <div class="d3d6">
+                  <button class="d3d6b1">-</button>
+                  <input type="text" class="d3d6i1" value='1'>
+                  <button class="d3d6b2">+</button>
+                  <p class="d3d6p1">仅剩9件</p>
+                </div>
+                <div class="d3d7" id="d1">${res[i].price}</div>
+                <div class="d3d8">
+                  <a href="#">删除</a>
+                  <br>
+                  <a href="#">移入我的收藏</a>
+                </div>
+              </li>
+            </ul>
+          `;
         }
+      }
+    }
     // 数据是其他格式的，需要转换成对象
-        var lid=location.search.split('=')[1];
+    var lid=location.search.split('=')[1];
     // 打开连接，请求方法为get和路由方法的请求方式要保持一致，通过id获取对应的数据，所以需要将id传给服务器
-        xhr.open("get","/shopping_car/shop?id="+sessionStorage["id"],true);
+    xhr.open("get","/shopping_car/shop?id="+sessionStorage["id"],true);
     // 发送请求
-        xhr.send();
-    }
-    {
-      // for (const btn of btns) {
-        function sub(){
-          if(num.value>1)
-          num.value--;
-          if(num.value<1)
-          num.value=1;
-          d1.innerHTML='￥'+price.innerHTML*num.value+'.00';
-          d5d22.innerHTML=d1.innerHTML;
-          d7.innerHTML=num.value;
-          d522.innerHTML="商品应付总计："+d5d22.innerHTML;
-          d466.innerHTML="商品应付总计："+d5d22.innerHTML;
-        }
-        function add(){
-          if(num.value>9)
-          num.value=9;
-          if(num.value<9)
-          num.value++;
-          d1.innerHTML='￥'+price.innerHTML*num.value+'.00';
-          d5d22.innerHTML=d1.innerHTML;
-          d7.innerHTML=num.value;
-          d522.innerHTML="商品应付总计："+d5d22.innerHTML;
-          d466.innerHTML="商品应付总计："+d5d22.innerHTML;
-        }
-      // }
-      function info1(){
-        i1.onclick=function(){
-          if(i1.checked==true){
-            i2.checked=true;
-            i3.checked=true;
-            i4.checked=true;
-          }else{
-            i2.checked=false;
-            i3.checked=false;
-            i4.checked=false;
-          }
-        }
+    xhr.send();
+    //     
+    // var btns=document.querySelectorAll(".d3d6 button");
+    var bt=document.getElementsByClassName("d3")[0];
+    var btc=bt.children;
+  }
+
+  let d3=document.getElementById('d3');
+  d3.onclick=function(e){
+    // 1.input 加减
+    let d3=this;
+    let btns=e.target;
+    let total=0;
+    let count=1;
+    let input=btns.parentNode.children[1];
+    if(btns.nodeName=='BUTTON'){
+        count=input.value;//数量
+      if(btns.innerHTML=='+'){
+        if(count<9)
+          count++;
+      }else{
+        if(count>1)
+          count--;
       }
-      info1();
-      function info2(){
-        i4.onclick=function(){
-          if(i4.checked==true){
-            i1.checked=true;
-            i2.checked=true;
-            i3.checked=true;
-          }else{
-            i1.checked=false;
-            i2.checked=false;
-            i3.checked=false;
-          }
-        }
-      }
-      info2();
+      input.value=count;
+      let price=btns.parentNode.nextElementSibling;
+      let dprice=parseInt(btns.parentNode.previousElementSibling.children[1].innerHTML);
+      total=input.value*dprice;
+      price.innerHTML=total;
     }
+    // 2.总价
+    let spans=d3.querySelectorAll('.d3d7');
+    let sum=0;
+    for(var s of spans){
+      sum+=parseInt(s.innerHTML);
+    }
+    // let span=spans.innerHTML.slice(-1);
+
+    // spans.innerHTML=`商品应付总计：￥${total}`
+
+    // 2.总件数
+    // let em=document.querySelector('.d5d2e1');
+    // 先找每个input的单件数量
+    // let inps=d3.querySelectorAll('.d3d6i1');
+    // let sum=0;
+    // for(var inp of inps){
+    //   sum+=parseInt(inp.value);
+    // }
+    // em.innerHTML=sum;
+  }
   </script>
 </body>
 </html>

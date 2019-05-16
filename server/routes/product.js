@@ -19,7 +19,7 @@ router.get('/keyWords',(req,res)=>{
 router.get('/price',(req,res)=>{
   let $minPrice = req.query.minPrice;
   let $maxPrice = req.query.maxPrice;
-  console.log(req.query);
+  // console.log(req.query);
   let sql=`select*from lg_laptop where price between ? and ? order by price asc`;
   pool.query(sql,[$minPrice,$maxPrice],(err,result)=>{
     if(err) throw err;

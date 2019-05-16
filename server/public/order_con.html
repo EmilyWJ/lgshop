@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>订单确认页-欢乐购</title>
+  <style>
+    s{
+      text-decoration: none;
+    }
+    li,.clearfix{
+      list-style: none;
+    }
+    .wt-ul,.mg-ul>li>ul{
+      display: flex;
+      justify-content: space-between;
+    }
+    .quan>ul{
+      display: flex;
+    }
+    h4,.wt-p{
+      color: #333;
+    }
+    .clearfix span,.opt,.wt-p,.packInfo>span,.mg-spa{
+      display: inline-block;
+    }
+    .clearfix span,.opt,.wt-p,.wt-ul li{
+      font-size: 14px;
+    }
+    .wt-ul li{
+      color:#999;
+    }
+    .packInfo,.mu-li2{
+      color: #666;
+    }
+    .buy-main{
+      margin: 0 auto;
+      width: 1100px;
+      border:1px solid #ccc;
+    }
+    h4{
+      margin: 10px;
+      line-height: 35px;
+      border-bottom: 1px solid #ddd;
+    }
+    .address{
+      margin-top:20px;
+      width: 100%;
+    }
+    .clearfix{
+      padding: 15px 0 0;
+    }
+    .clearfix span{
+      margin: 10px 30px 0 0;
+      width: 120px;
+      text-align: right;
+    }
+    .clearfix span>s{
+      padding-right: 5px;
+      color: #d12147;
+    }
+    .opt{
+      margin-bottom: 0px;
+      width: 150px;
+      height: 30px;
+      border:1px solid #ccc;
+      text-align: center;
+      line-height: 30px;
+    }
+    .clearfix input{
+      width: 450px;
+      height: 65px;
+    }
+    .cl-btn{
+      width:130px;height: 40px;
+      margin-left: 150px;
+      color: #fff;
+      border: 1px solid #e31346;
+      background-color: #e31346;
+    }
+    .cl-btn:hover{
+      background-color:#f5345e;
+      border:1px solid #f5345e;
+      cursor: pointer;
+    }
+    .orderwrap{
+      margin-top: 30px;
+      width:100%;height: 742px;
+      border:1px solid red;
+    }
+    .wt-ul li{
+      width: 150px;
+    }
+    .wt-ul li:first-child{
+      width: 55%;
+    }
+    .m-wrapbox,.quan{
+      border: 1px solid #e8e8e8;
+    }
+    .wt-p,.packInfo,.m-goods{
+      border-top:1px solid #eaeaea;
+    }
+    .wt-p,.packInfo{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+    }
+    .wt-p{
+      background-color: #f3f3f3;
+    }
+    .packInfo,.mu-li2{
+      font-size: 12px;
+    }
+    .wt-p>span,.packInfo>span{
+      margin-left: 20px;
+    }
+    .m-goods{
+      width: 100%;
+    }
+    .mg-ul{
+      margin-bottom:0;
+      padding-left: 20px;
+    }
+    .mg-ul li{
+      height: 50px;
+    }
+    .mu-ul{
+      padding: 0;
+    }
+    .mu-ul li:first-child{
+      width: 40px;
+    }
+    .mg-ds img{
+      width:15px;
+      height: 15px;
+    }
+    .mu-img{
+      width: 40px;
+      height: 40px;
+    }
+    .mu-li2{
+      width: 625px;
+    }
+    .mu-li2 div{
+      margin:0 5px 5px 10px;
+    }
+    .mg-spa{
+      vertical-align: middle;
+      margin-top: -9px;
+    }
+    .col{
+      width: 160px;
+      color: #333;
+      font-size: 12px;
+    }
+    /* 优惠券区 */
+    .quan{
+      margin-top:20px;
+      width: 100%;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="buy-main">
+    <h4>选择收货地址</h4>
+    <div class="address">
+      <div class="clearfix">
+        <span><s>*</s>所在地区</span>
+        <s class="opt">请选择</s>
+      </div>
+      <div class="clearfix">
+        <span><s>*</s>详细地址</span>
+        <input type="text" placeholder="无需重复填写省市区，小于75个字">
+      </div>
+      <div class="clearfix">
+        <span><s>*</s>收货人姓名</span>
+        <input type="text" placeholder="不能为昵称、X先生、X小姐等，请使用真实姓名">
+      </div>
+      <div class="clearfix">
+        <span><s>*</s>手机号码</span>
+        <input type="text" placeholder="手机号码必填">
+      </div>
+      <div class="clearfix">
+        <span><s>*</s>邮箱</span>
+        <input type="text" placeholder="接受订单提醒邮件，便于您及时了解订单状态">
+      </div>
+      <div class="clearfix">
+        <button class="cl-btn">保存新地址</button>
+      </div>
+    </div>
+    <div class="orderwrap">
+      <h4>确认商品信息</h4>
+      <div class="owrap-top">
+        <ul class="wt-ul">
+          <li>商品信息</li>
+          <li>重量(千克)</li>
+          <li>单位(元)</li>
+          <li>数量</li>
+          <li>金额(元)</li>
+        </ul>
+        <div class="m-wrapbox">
+          <b class="wt-p">
+            <span>乐购保税仓</span>
+          </b>
+          <div class="packInfo">
+            <span>以下商品预计送达时间：2019-05-17</span>
+          </div>
+          <div class="m-goods">
+            <ul class="mg-ul">
+              <li>
+                <ul class="mu-ul">
+                  <li>
+                    <img src="images/xl/jm_3.jpg" alt="" class="mu-img">
+                  </li>
+                  <li class="mu-li2">
+                    <div>【5.18-5.20满299减100】JMsolution 肌司研 水光蜂</div>
+                    <div class="mg-ds">
+                      <span>
+                        <img src="images/bao.jpg" alt="">
+                        <span class="mg-spa">过敏无忧</span>
+                      </span>
+                      <span>
+                        <img src="images/bao.jpg" alt="">
+                        <span class="mg-spa">破损无忧</span>
+                      </span>
+                      <span>
+                        <img src="images/san.jpg" alt="">
+                        <span class="mg-spa">支持30天无忧退货</span>
+                      </span>
+                    </div>
+                  </li>
+                  <li class="col">0.45</li>
+                  <li class="col">
+                    <div>62.00</div>
+                    <div></div>
+                  </li>
+                  <li class="col">1</li>
+                  <li class="col"><b>62.00</b></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="quan">
+          <ul class="qu-ul">
+            <li>
+              <span>商品券(0):</span>
+            </li>
+            <li>
+              <span>运费券(0):</span>
+            </li>
+            <li>
+              <span>税费券(0):</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
