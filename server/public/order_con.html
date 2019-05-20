@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="CSS/main.css">
   <title>订单确认页-欢乐购</title>
   <style>
     s{
@@ -16,10 +18,12 @@
       display: flex;
       justify-content: space-between;
     }
-    .quan>ul{
+    .quan{
       display: flex;
+      justify-content: space-around;
     }
-    h4,.wt-p{
+    
+    .h,.wt-p{
       color: #333;
     }
     .clearfix span,.opt,.wt-p,.packInfo>span,.mg-spa{
@@ -39,8 +43,9 @@
       width: 1100px;
       border:1px solid #ccc;
     }
-    h4{
+    .h{
       margin: 10px;
+      font-size: 17px;
       line-height: 35px;
       border-bottom: 1px solid #ddd;
     }
@@ -86,8 +91,7 @@
     }
     .orderwrap{
       margin-top: 30px;
-      width:100%;height: 742px;
-      border:1px solid red;
+      width:100%;height: 652px;
     }
     .wt-ul li{
       width: 150px;
@@ -156,108 +160,210 @@
     }
     /* 优惠券区 */
     .quan{
-      margin-top:20px;
+      margin-top:40px;
       width: 100%;
-      height: 80px;
+      height: 300px;
+      background-color: #f3f3f3;
+    }
+    .q-mess,.q-price{
+      margin-top: 40px;
+    }
+    .q-mess{
+      width: 650px;
+    }
+    .q-mess span{
+      font-size: 13px;
+    }
+    .q-mess dl{
+      margin-top: 13px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #999;
+    }
+    .q-mess dl>dd{
+      margin:5px 0 0;
+    }
+    .q-price{
+      width: 320px;
+    }
+    .q-price div{
+      text-align: right;
+    }
+    .q-price div>span{
+      display: inline-block;
+      margin:8px 0;
+      width: 115px;
+      font-size: 13px;
+    }
+    .s-price{
+      display: inline-block;
+      width: 115px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #e73333;
+    }
+    .up-sh{
+      font-size: 13px;
+      color: #51b8f1;
+      text-decoration: none;
+    }
+    .up-sh:hover{
+      text-decoration: underline;
+    }
+    .s-btn{
+      display: inline-block;
+      margin:10px 0 0 15px;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      background: #e31436;
+      cursor: pointer;
+      border:0;
     }
   </style>
 </head>
 <body>
-  <div class="buy-main">
-    <h4>选择收货地址</h4>
-    <div class="address">
-      <div class="clearfix">
-        <span><s>*</s>所在地区</span>
-        <s class="opt">请选择</s>
-      </div>
-      <div class="clearfix">
-        <span><s>*</s>详细地址</span>
-        <input type="text" placeholder="无需重复填写省市区，小于75个字">
-      </div>
-      <div class="clearfix">
-        <span><s>*</s>收货人姓名</span>
-        <input type="text" placeholder="不能为昵称、X先生、X小姐等，请使用真实姓名">
-      </div>
-      <div class="clearfix">
-        <span><s>*</s>手机号码</span>
-        <input type="text" placeholder="手机号码必填">
-      </div>
-      <div class="clearfix">
-        <span><s>*</s>邮箱</span>
-        <input type="text" placeholder="接受订单提醒邮件，便于您及时了解订单状态">
-      </div>
-      <div class="clearfix">
-        <button class="cl-btn">保存新地址</button>
-      </div>
-    </div>
-    <div class="orderwrap">
-      <h4>确认商品信息</h4>
-      <div class="owrap-top">
-        <ul class="wt-ul">
-          <li>商品信息</li>
-          <li>重量(千克)</li>
-          <li>单位(元)</li>
-          <li>数量</li>
-          <li>金额(元)</li>
-        </ul>
-        <div class="m-wrapbox">
-          <b class="wt-p">
-            <span>乐购保税仓</span>
-          </b>
-          <div class="packInfo">
-            <span>以下商品预计送达时间：2019-05-17</span>
-          </div>
-          <div class="m-goods">
-            <ul class="mg-ul">
-              <li>
-                <ul class="mu-ul">
-                  <li>
-                    <img src="images/xl/jm_3.jpg" alt="" class="mu-img">
-                  </li>
-                  <li class="mu-li2">
-                    <div>【5.18-5.20满299减100】JMsolution 肌司研 水光蜂</div>
-                    <div class="mg-ds">
-                      <span>
-                        <img src="images/bao.jpg" alt="">
-                        <span class="mg-spa">过敏无忧</span>
-                      </span>
-                      <span>
-                        <img src="images/bao.jpg" alt="">
-                        <span class="mg-spa">破损无忧</span>
-                      </span>
-                      <span>
-                        <img src="images/san.jpg" alt="">
-                        <span class="mg-spa">支持30天无忧退货</span>
-                      </span>
-                    </div>
-                  </li>
-                  <li class="col">0.45</li>
-                  <li class="col">
-                    <div>62.00</div>
-                    <div></div>
-                  </li>
-                  <li class="col">1</li>
-                  <li class="col"><b>62.00</b></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+  <div class="home">
+    <header id="head">
+    </header>
+    <div class="buy-main">
+      <h3 class="h">选择收货地址</h3>
+      <div class="address">
+        <div class="clearfix">
+          <span><s>*</s>所在地区</span>
+          <s class="opt">请选择</s>
         </div>
-        <div class="quan">
-          <ul class="qu-ul">
-            <li>
-              <span>商品券(0):</span>
-            </li>
-            <li>
-              <span>运费券(0):</span>
-            </li>
-            <li>
-              <span>税费券(0):</span>
-            </li>
+        <div class="clearfix">
+          <span><s>*</s>详细地址</span>
+          <input type="text" placeholder="无需重复填写省市区，小于75个字">
+        </div>
+        <div class="clearfix">
+          <span><s>*</s>收货人姓名</span>
+          <input type="text" placeholder="不能为昵称、X先生、X小姐等，请使用真实姓名">
+        </div>
+        <div class="clearfix">
+          <span><s>*</s>手机号码</span>
+          <input type="text" placeholder="手机号码必填">
+        </div>
+        <div class="clearfix">
+          <span><s>*</s>邮箱</span>
+          <input type="text" placeholder="接受订单提醒邮件，便于您及时了解订单状态">
+        </div>
+        <div class="clearfix">
+          <button class="cl-btn">保存新地址</button>
+        </div>
+      </div>
+      <div class="orderwrap">
+        <h4 class="h">确认商品信息</h4>
+        <div class="owrap-top">
+          <ul class="wt-ul">
+            <li>商品信息</li>
+            <li>重量(千克)</li>
+            <li>单位(元)</li>
+            <li>数量</li>
+            <li>金额(元)</li>
           </ul>
+          <div class="m-wrapbox">
+            <b class="wt-p">
+              <span>乐购保税仓</span>
+            </b>
+            <div class="packInfo">
+              <span>以下商品预计送达时间：2019-05-17</span>
+            </div>
+            <div class="m-goods">
+              <ul class="mg-ul">
+                <li>
+                  <ul class="mu-ul">
+                    <li>
+                      <img src="images/xl/jm_3.jpg" alt="" class="mu-img">
+                    </li>
+                    <li class="mu-li2">
+                      <div>【5.18-5.20满299减100】JMsolution 肌司研 水光蜂</div>
+                      <div class="mg-ds">
+                        <span>
+                          <img src="images/bao.jpg" alt="">
+                          <span class="mg-spa">过敏无忧</span>
+                        </span>
+                        <span>
+                          <img src="images/bao.jpg" alt="">
+                          <span class="mg-spa">破损无忧</span>
+                        </span>
+                        <span>
+                          <img src="images/san.jpg" alt="">
+                          <span class="mg-spa">支持30天无忧退货</span>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="col">0.45</li>
+                    <li class="col">
+                      <div>62.00</div>
+                      <div></div>
+                    </li>
+                    <li class="col">1</li>
+                    <li class="col"><b>62.00</b></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="quan">
+            <!-- <ul class="qu-ul">
+              <li>
+                <span>商品券(0):</span>
+              </li>
+              <li>
+                <span>运费券(0):</span>
+              </li>
+              <li>
+                <span>税费券(0):</span>
+              </li>
+            </ul> -->
+            <div class="q-mess">
+              <span>发票信息：订单中所有商品均不支持开具发票</span>
+              <dl>
+                <dt>发票须知：</dt>
+                <dd>1. 保税仓发货商品与海外仓发货商品属跨境海外商品，无法开具国内增值税发票</dd>
+                <dd>2. 自2017年7月1日起，发票抬头选择公司（企业、有税号的非企业性单位和个体工商户）需提供纳税人识别号</dd>
+                <dd>3. 自营国内仓商品支持开具电子普通发票，电子普通发票在确认收货后48小时内开具</dd>
+                <dd>4. 杭州1号仓和杭州4号仓的商品，若下单开具纸质普通发票，发票随包裹一起寄出，补开则单独寄出</dd>
+                <dd>5. 其他自营国内仓商品，若开具纸质普通发票，发票在确认收货后3个工作日内单独寄出</dd>
+                <dd>6. 第三方商家若无法开具电子发票，则自动开纸质发票，商家发票以实际收到为准</dd>
+                <dd>7. 如需增值税专用发票，请在下单时填写增值税专用发票信息，核对无误后提交，发票在确认收货后3个工作日内单独寄出</dd>
+                <dd>8. 礼品卡支付金额不支持开发票</dd>
+              </dl>
+            </div>
+            <div class="q-price">
+              <div>
+                <span>商品应付总计：</span>
+                <span>¥633.00</span>
+              </div>
+              <div>
+                <span>运费：</span>
+                <span>¥0.00</span>
+              </div>
+              <div>
+                <span>税费：</span>
+                <span>¥67.16</span>
+              </div>
+              <div>
+                <span>应付金额：</span>
+                <b class="s-price">¥700.16</b>
+              </div>
+              <div>
+                <a href="Shopping_Car.html" class="up-sh">返回购物车修改</a>
+                <input type="button" class="s-btn" value="提交订单">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <footer class="floor"></footer>
   </div>
+<script src="JS/jquery-3.4.1.min.js"></script>
+<script src="JS/main.js"></script>
 </body>
 </html>
