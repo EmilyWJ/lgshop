@@ -9,6 +9,7 @@ const regRouter=require("./routes/reg");
 const goodsinfoRouter=require('./routes/goodsinfo');
 const loginRouter=require('./routes/login');
 const shopRouter=require('./routes/shopping_car');
+const orderRouter=require('./routes/order_con');
 // const detailRouter=require('./routes/detail');
 
 // 创建web服务器
@@ -49,5 +50,6 @@ app.use("/reg",regRouter);
 app.use("/login",loginRouter);
 // 购物车
 app.use("/shopping_car",shopRouter);
-
+// 用户订单
+app.use("/order_con",orderRouter);
 

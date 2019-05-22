@@ -5,11 +5,17 @@ let router=express.Router();
 // 1.keyWords 关键字查询
 router.get('/keyWords',(req,res)=>{
   let $kws=req.query.kws;
+  let arr=[];
   let sql=`select * from lg_laptop where subtitle like "%${$kws}%"`
   pool.query(sql,(err,result)=>{
     if(err) throw err;
-    if(result.length>0)
-      res.send(result)
+    if(result.length>0){
+      res.send(result);
+      for(var i=0;i<result.length;i++){
+        arr.push(result[i].price);
+      }
+      console.log(arr);
+    }
     else
       res.send('1');
   })

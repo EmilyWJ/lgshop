@@ -74,14 +74,15 @@
     if(xhr.readyState==4 && xhr.status==200){
     // 接收服务器传过来的数据并将格式转成json对象
       var res=JSON.parse(xhr.responseText);
-      console.log(res);
+      // console.log(res);
       let len=res.length;
       si.innerHTML=len;
         // 把数据一一放入对应的标签中
-      for (let i = 0; i < len; i++) {
+      for (let i = 0; i < len; i++){
         d4.innerHTML+=`
           <ul class="d3u1">
               <li class="d3l1">
+                <div style="display:none">${res[i].product_id}</div>
                 <div class="d3d1">
                   <input type="checkbox" id="i3">
                 </div>
@@ -107,7 +108,7 @@
                 </div>
                 <div class="d3d6">
                   <button class="d3d6b1">-</button>
-                  <input type="text" class="d3d6i1" value='1'>
+                  <input type="text" class="d3d6i1" value='${res[i].count}'>
                   <button class="d3d6b2">+</button>
                   <p class="d3d6p1">仅剩9件</p>
                 </div>
@@ -134,76 +135,143 @@
     var bt=document.getElementsByClassName("d3")[0];
     var btc=bt.children;
   }
-
+  // 找到商品列表最外层的元素id
   let d3=document.getElementById('d3');
+  // 并给元素绑定事件，因为商品列表的所有元素都是遍历出来的，在页面用dom找不到元素
+  // 所以通过事件委托将函数绑定在父级元素上
   d3.onclick=function(e){
     // 1.input 加减
     let d3=this;
     let btns=e.target;
     let total=0;
     let count=1;
-    let input=btns.parentNode.children[1];
-    if(btns.nodeName=='BUTTON'){
+    let input=btns.parentNode.children[1];//获得商品数量文本框
+    if(btns.nodeName=='BUTTON'){//如果点击的是button按钮就执行加减逻辑代码
         count=input.value;//数量
-      if(btns.innerHTML=='+'){
+      if(btns.innerHTML=='+'){//如果按钮为加
         if(count<9)
           count++;
       }else{
         if(count>1)
           count--;
       }
-      input.value=count;
-      let price=btns.parentNode.nextElementSibling;
-      let dprice=parseInt(btns.parentNode.previousElementSibling.children[1].innerHTML);
-      total=input.value*dprice;
-      price.innerHTML=total;
+      // 获取商品编号的元素
+      let product_id=btns.parentNode.parentNode.children[0].innerHTML;
+      // console.log(proId);
+      fetch("/shopping_car/countAdd?count="+count+"&product_id="+product_id).then(res=>res.json()).then(data=>{
+        // console.log(data);
+      })
+
+      input.value=count;//把加减后的数量赋给文本框
+      let price=btns.parentNode.nextElementSibling;//找到商品的小计
+      let dprice=parseInt(btns.parentNode.previousElementSibling.children[1].innerHTML);//找到商品的单价
+      total=input.value*dprice;//小计
+      price.innerHTML=total;//把小计的值赋给页面
     }
     // 2.总价
-    let spans=d3.querySelectorAll('.d3d7');
-    let sum=0;
-    for(var s of spans){
+    let spans=d3.querySelectorAll('.d3d7');//找到所有的小计
+    let sum=0;//总价初始值
+    for(var s of spans){       //遍历所有的小计，
       sum+=parseInt(s.innerHTML);
     }
+    // 获得所有的复选框
     var chbs=d4.querySelectorAll("input[type=checkbox]");
-    // console.log(chbs);
-    // for (const chb of chbs) {
-    //   if(chb.checked==true){
-    //     var cnum=chb.parentNode.parentNode.children[5];
-    //     var num=chb.parentNode.parentNode.getElementsByClassName("d3d6i1")[0];
-    //     console.log(num);
-    //   }
-    // }
-    var nu=0;
-    var pri=0;
-    var su=document.getElementsByClassName("d5d2e1")[0];
-    var sup=document.getElementsByClassName("d5d2e2")[0];
-    for (var i=0;i<chbs.length;i++) {
+    let index=0;
+    var nu=0;//数量的初始值
+    var pri=0;//价格的初始值
+    var su=document.getElementsByClassName("d5d2e1")[0];//总件数
+    var sup=document.getElementsByClassName("d5d2e2")[0];//总价
+    for (const ch of chbs) {//遍历复选框
       // console.log(chbs);
-      if(chbs[i].checked==true){
+      if(ch.checked){//如果被选中
         // console.log(i);
-        var cnum=chbs[i].parentNode.parentNode.children[5];
-        var num=chbs[i].parentNode.parentNode.getElementsByClassName("d3d6i1")[0].value;
-        var pric=chbs[i].parentNode.parentNode.getElementsByClassName("d3d7")[0].innerHTML;
+        // var cnum=chbs[i].parentNode.parentNode.children[5];
+        // 获得商品的件数
+        var num=ch.parentNode.parentNode.getElementsByClassName("d3d6i1")[0].value;
+        //获得价格
+        var pric=ch.parentNode.parentNode.getElementsByClassName("d3d7")[0].innerHTML;
         // console.log(num,pric);
-        nu+=parseInt(num);
-        pri+=parseInt(pric);
+        nu+=parseInt(num);//件数累加
+        pri+=parseInt(pric);//价格累加
+
+        // 去结算
+        var order=document.getElementsByClassName("d5a1")[0];
+        // console.log(order);
+        
+        // console.log(sessionStorage)
+        order.onclick=function(){
+          let arr=[];
+          
+          for (var i=0;i<chbs.length;i++) {
+            var product_id=chbs[i].parentNode.previousElementSibling.innerHTML,
+                o_img=chbs[i].parentNode.parentNode.querySelector(".d3a1>img"),
+                o_name=chbs[i].parentNode.parentNode.querySelector(".d3a2").innerHTML,
+                o_dp=chbs[i].parentNode.parentNode.querySelector(".d3d5p2").innerHTML,
+                o_count=chbs[i].parentNode.parentNode.querySelector(".d3d6i1").value,
+                o_p=chbs[i].parentNode.parentNode.querySelector(".d3d7").innerHTML;
+            obj={};
+            // console.log(o_img,o_name,o_dp,o_count,o_p);
+            // obj.img=o_img;
+            // obj.name=o_name;
+            console.log(o_count)
+            if(chbs[i].checked){
+              // console.log(product_id)
+              // obj.lid=product_id
+              // obj.img=o_img.src;
+              // obj.name=o_name;
+              // arr.push(obj)
+              fetch(`/order_con/getOrder?product_id=${product_id}&count=${o_count}&order_id=${sessionStorage["id"]}`
+                
+              ).then(res=>res.json()).then(data=>{
+                console.log(data);
+              })
+            }
+            // console.log(obj_1);
+          }
+          // sessionStorage.arr=arr;
+          // arr.push(obj_1);
+          // console.log(arr);
+          location.href="order_con.html?order_id="+sessionStorage["id"];
+          // console.log(arr);
+          
+        }
+        // order.onclick=function(){
+        //   // 获取商品编号的元素
+        //   let product_id=chbs.parentNode.previousElementSibling.innerHTML;
+        //   arr[i]=product_id;
+        //   fetch("/shopping_car/cartlist?product_id="+arr).then(res=>res.json()).then(data=>{
+        //     // location.href="order_con.html";
+        //   })
+        //   // location.href="order_con.html?prduct_id="+product_id;
+        // }
+      }
+      // 复选框点击事件
+      ch.onclick=function(){
+        var ch=this;
+        // 如果没被选中
+        if(!ch.checked){
+          l1.checked=false;//全选按钮不被选中
+        }else{
+          // 找到没有被选中的复选框
+          var cr=document.querySelector(".d3d1>input[type=checkbox]:not(:checked)");
+          // console.log(cr);
+          // 没有找到则返回null，并让全选按钮选中
+          if(cr==null){
+            l1.checked=true;
+            // console.log(l1.checked);
+          }
+        }
       }
     }
+    // 全选按钮点击事件
     l1.onclick=function(){
-      if(l1.checked){
-        console.log(chbs);
-        for (const ch of chbs) {
-          ch.setAttribute("checked","true");
-          console.log(ch.checked);
-        }
-      }else{
-        for (var ch of chbs) {
-          console.log(ch.checked);
-          ch.removeAttribute("checked");
-        }
+      // console.log(chbs);
+      for (const ch of chbs) {//全选的状态赋给商品复选框
+        ch.checked=l1.checked;
       }
     }
     // console.log(nu,pri);
+    //放值
     su.innerHTML=nu;
     sup.innerHTML=pri;
     // let span=spans.innerHTML.slice(-1);

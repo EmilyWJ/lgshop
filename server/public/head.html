@@ -12,16 +12,13 @@
   <div class="top">
     <div class="top-main">
       <div class="top-left">
-        <ul>
+        <ul id="signUp">
           <li>乐乐欢迎您！</li>
           <li>
-            <a href="login.html"  target="_self" id="le">你好，请登录</a>
+            <a href="login.html"  target="_self">你好，请登录</a>
           </li>
           <li>
             <a href="reg.html"  target="_self">免费注册</a>
-          </li>
-          <li>
-            <a href="#">手机惠购</a>
           </li>
         </ul>
       </div>
@@ -1041,7 +1038,7 @@
         </div>
         <div class="list-dh">
           <ul>
-            <li><a href="http://127.0.0.1:3000/Home.html">首页</a></li>
+            <li><a href="Home.html">首页</a></li>
             <li>今日限时购</li>
             <li>每日上新</li>
             <li>国家馆</li>
@@ -1056,25 +1053,24 @@
     </div>
   </div>
   <script>
-  // let i1=document.getElementById("i1");
+    // 判断用户是否存在
+    let signUp=document.getElementById('signUp');
     if(sessionStorage["uid"]){
-      le.innerHTML=`当前用户：${sessionStorage["uid"]}`;
+      signUp.innerHTML=`
+        <li>乐乐欢迎您！</li>
+        <li>
+          <a href="#"  target="_self" id="le">${sessionStorage["uid"]}</a>
+        </li>
+        <li>
+          <a href="#" id="signOut" target="_self">退出</a>
+        </li>
+      `
     }
     fetch("/shopping_car/car?user_id="+sessionStorage["id"]).then(res=>res.json()).then(data=>{
-      // console.log(data);
-      // let news=data.map((elem,i,data)=>{
-      //   // if(elem.product_id){
-      //   //   console.log(elem.product_id);
-      //   //   elem.count++;
-      //   //   console.log(elem);
-      //   // }
-      // })
-      // console.log(news)
       let len=data.length;
       let str=0;
       for (let i = 0; i < len; i++) {
         str+=data[i].count;
-        // console.log(str);
       }
       em_id.innerHTML=str;
     })
@@ -1084,8 +1080,16 @@
       }
       const i1=document.getElementById("i1");
       function kw(obj){
-        console.log(i1.value);
         obj.href=`product.html?kws=${i1.value}`
+      }
+    }
+    
+    // 用户退出
+    let signOut=document.getElementById('signOut');
+    if(signOut){
+      signOut.onclick=()=>{
+        sessionStorage.uid='';
+        location.reload();
       }
     }
   </script>

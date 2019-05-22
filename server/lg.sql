@@ -95,7 +95,7 @@ CREATE TABLE lg_order_detail(
   did INT PRIMARY KEY AUTO_INCREMENT,
   order_id INT,           #订单编号
   product_id INT,         #产品编号
-  count INT               #购买数量
+  count INT              #购买数量
 );
 
 /****首页轮播广告商品****/

@@ -24,7 +24,8 @@ router.get("/getshop",(req,res)=>{
   // console.log($lid);
 
   // 以请求的lid值为sql语句查询的条件，查询符合条件的数据，因为需要的数据存储在两张表中，所以需要用到关联复合查询，将两张表关联查询
-  let sql="select DISTINCT * from lg_laptop l inner join lg_shoppingcart_item li on l.lid=li.product_id inner join lg_user u on li.user_id=u.uid where li.user_id=? and li.product_id=?";
+  // let sql="select DISTINCT * from lg_laptop l inner join lg_shoppingcart_item li on l.lid=li.product_id inner join lg_user u on li.user_id=u.uid where li.user_id=? and li.product_id=?";
+  let sql='select*from lg_shoppingcart_item where user_id=? and product_id=?'
   // let sq="select * from lg_shoppingcart_item li inner join lg_user u on li.user_id=u.uid where li.user_id=7";
   pool.query(sql,[$id,$lid],(err,result)=>{
     if(err) throw err;
